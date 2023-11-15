@@ -1,6 +1,7 @@
 package school.redrover;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -85,5 +86,17 @@ public class Header2Test extends BaseTest {
         assertTrue(isStatusPageSelected);
     }
 
+    @Test
+    public void testHotKeysSearchAreaSelection() {
+        new Actions(getDriver())
+                .keyDown(Keys.CONTROL)
+                .sendKeys("k")
+                .keyUp(Keys.CONTROL)
+                .perform();
+
+        boolean isFocused = (Boolean) ((JavascriptExecutor) getDriver()).executeScript(
+                "return document.activeElement === arguments[0]", getDriver().findElement(By.name("q")));
+        assertTrue(isFocused);
+    }
 
 }
