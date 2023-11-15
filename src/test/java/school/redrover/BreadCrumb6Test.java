@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import school.redrover.runner.BaseTest;
 
-public class BreadCrumbTest6 extends BaseTest {
+public class BreadCrumb6Test extends BaseTest {
 
    @Test
     public void testNavigateToDashboard () {
