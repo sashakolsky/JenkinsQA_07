@@ -3,11 +3,15 @@ package school.redrover.model;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import school.redrover.model.base.BasePage;
 
 import java.util.List;
 
 public class HomePage extends BasePage {
+
+    @FindBy(xpath = "//a[@href='computer/new']")
+    private WebElement SetUpAnAgent;
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -30,5 +34,11 @@ public class HomePage extends BasePage {
         getDriver().findElement(By.xpath("//a[@href='/view/all/newJob']")).click();
 
         return page;
+    }
+
+    public NodeCreatePage clickSetUpAnAgent() {
+        SetUpAnAgent.click();
+
+        return new NodeCreatePage(getDriver());
     }
 }
