@@ -24,8 +24,8 @@ public class NewItemPage extends BasePage {
         return this;
     }
 
-    public NewItemPage selectItemType(String type) {
-        getDriver().findElement(By.xpath("//span[text()='" + type + "']")).click();
+    public NewItemPage selectOrganizationFolder() {
+        getDriver().findElement(By.xpath("//li[@class = 'jenkins_branch_OrganizationFolder']")).click();
 
         return this;
     }

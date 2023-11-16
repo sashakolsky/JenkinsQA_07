@@ -8,7 +8,6 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import school.redrover.model.HomePage;
-import school.redrover.model.NewItemPage;
 import school.redrover.runner.BaseTest;
 
 import java.util.ArrayList;
@@ -23,7 +22,7 @@ public class OrganizationFolderTest extends BaseTest {
         HomePage homePage = new HomePage(getDriver())
                 .clickNewItem()
                 .typeItemName(PROJECT_NAME)
-                .selectItemType("Organization Folder")
+                .selectOrganizationFolder()
                 .clickOk()
                 .goHomePage();
 
