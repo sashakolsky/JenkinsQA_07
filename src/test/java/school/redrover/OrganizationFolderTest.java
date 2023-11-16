@@ -17,7 +17,7 @@ public class OrganizationFolderTest extends BaseTest {
     @Test
     public void testCreateOrganizationFolderWithValidName() {
         HomePage homePage = new HomePage(getDriver())
-                .clickNewItem(new NewItemPage(getDriver()))
+                .clickNewItem()
                 .typeItemName(PROJECT_NAME)
                 .selectItemType("Organization Folder")
                 .clickOk()
