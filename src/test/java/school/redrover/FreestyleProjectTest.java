@@ -259,15 +259,15 @@ public class FreestyleProjectTest extends BaseTest {
         assertEquals(getDriver().findElement(By.xpath("//div[@id = 'description']/div[1]")).getText(), "");
     }
 
-   /* @Test
+    @Test
     public void testTooltipDiscardOldBuildsIsVisible(){
         boolean tooltipIsVisible = new HomePage(getDriver())
-                .clickNewItem(new NewJobPage(getDriver()))
+                .clickNewItem()
                 .createFreestyleProject("New Project")
                 .tooltipDiscardOldBuildsIsVisible();
 
         Assert.assertTrue(tooltipIsVisible, "The tooltip is not displayed.");
-    }*/
+    }
 
     @Test
     public void testDisableProjectFromStatusPage() {
