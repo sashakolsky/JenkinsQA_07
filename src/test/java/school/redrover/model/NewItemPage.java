@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import school.redrover.model.base.BasePage;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class NewItemPage extends BasePage {
 
@@ -13,6 +14,12 @@ public class NewItemPage extends BasePage {
 
     @FindBy(id = "ok-button")
     private WebElement okButton;
+
+    @FindBy(id = "itemname-required")
+    private WebElement requiredNameErrorMessage;
+
+    @FindBy(id = "itemname-invalid")
+    private WebElement invalidNameErrorMessage;
 
     public NewItemPage(WebDriver driver) {
         super(driver);
@@ -30,10 +37,18 @@ public class NewItemPage extends BasePage {
         return this;
     }
 
-    public ConfigurationPage clickOk() {
+    public <T> T clickOk (T page) {
         okButton.click();
 
-        return new ConfigurationPage(getDriver());
+        return page;
+    }
+
+    public String getRequiredNameErrorMessage() {
+        return getWait2().until(ExpectedConditions.visibilityOf(requiredNameErrorMessage)).getText();
+    }
+
+    public String getInvalidNameErrorMessage() {
+        return getWait2().until(ExpectedConditions.visibilityOf(invalidNameErrorMessage)).getText();
     }
 
     public FreestyleProjectConfigurePage createFreestyleProject(String projectName) {
