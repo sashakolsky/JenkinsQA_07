@@ -6,7 +6,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import school.redrover.runner.BaseTest;
-import school.redrover.runner.ProjectUtils;
 import school.redrover.runner.TestUtils;
 
 import java.net.URLEncoder;
@@ -48,7 +47,7 @@ public class DashboardTest extends BaseTest {
 
         // enter new name
         getDriver().findElement(By.xpath("//input[@name='newName']")).clear();
-        getDriver().findElement(By.xpath("//input[@name='newName']")).sendKeys(NEW_PROJECT_NAME);;
+        getDriver().findElement(By.xpath("//input[@name='newName']")).sendKeys(NEW_PROJECT_NAME);
 
         // click rename
         getDriver().findElement(By.xpath("//button[@name='Submit']")).click();
