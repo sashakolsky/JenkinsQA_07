@@ -21,12 +21,10 @@ public class DashboardTest extends BaseTest {
         final String NEW_PROJECT_NAME = "New project name";
         final String URLENCODED_NEW_PROJECT_NAME = URLEncoder.encode(NEW_PROJECT_NAME, StandardCharsets.UTF_8).replace("+", "%20");
 
-
         // create project
         TestUtils.createFreestyleProject(this, PROJECT_NAME);
 
         // show popup menu on dashboard
-
         String projectNameXPath = String.format("//tr[@id='job_%s']//a[contains(@href, '%s') and not(@tooltip='Schedule a Build for %s')]/span",
                 PROJECT_NAME,
                 URLENCODED_PROJECT_NAME,
