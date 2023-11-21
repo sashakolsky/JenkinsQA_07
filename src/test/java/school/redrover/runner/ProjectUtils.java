@@ -1,6 +1,5 @@
 package school.redrover.runner;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -72,7 +71,7 @@ public final class ProjectUtils {
             }
         }
 
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
     }
 
     static boolean isServerRun() {

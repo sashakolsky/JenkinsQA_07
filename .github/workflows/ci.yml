@@ -24,6 +24,8 @@ jobs:
 
       - name: Install chrome browser
         uses: browser-actions/setup-chrome@latest
+
+      - name: Check installed browser version
         run: chrome --version
 
       - name: Get list of changed files
